@@ -1,0 +1,33 @@
+.calculator {
+    width: 220px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: sans-serif;
+  }
+  
+  .display {
+    background: #222;
+    color: #fff;
+    padding: 20px;
+    font-size: 24px;
+    text-align: right;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  
+  .buttons button {
+    flex: 1 0 22%;
+    height: 50px;
+    font-size: 18px;
+    border: none;
+    background: #eee;
+    border-radius: 5px;
+    cursor: pointer;
+  }
