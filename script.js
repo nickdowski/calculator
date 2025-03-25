@@ -7,7 +7,7 @@ const multiply = (num1, num2) => num1 * num2;
 //Division
 const divide = (num1, num2) => {
     if (num2 === 0) {
-        return "Nice try, buddy boy!";
+        return 'Error';
     } else {
         return num1 / num2;
     }
@@ -29,11 +29,6 @@ const operate = (operator, num1, num2) => {
 
 //Display
 const display = document.getElementById('display');
-if (display.textContent === '0' && !isNaN(buttonText)) {
-    display.textContent = buttonText;
-} else {
-    display.textContent += buttonText;
-}
 
 //Buttons
 const buttons = document.querySelectorAll('button');
@@ -51,10 +46,15 @@ buttons.forEach(button => {
             }
             return;
         } else if (buttonText === '←') {
-            display.textContent = display.textContent.slice(0, -1);
+            display.textContent = display.textContent.slice(0, -1) || '0';
             return;
         }
-        display.textContent += buttonText;
-        console.log(`Button ${button.textContent} clicked`);
+
+        if (display.textContent === '0' && !isNaN(buttonText)) {
+            display.textContent = buttonText;
+        } else {
+            display.textContent += buttonText;
+        }
+        
     });
 });
